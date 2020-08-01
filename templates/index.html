@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>chAI bot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        #user_in {
+            margin-top: 10px;
+            position: relative;
+            bottom: 0;
+            max-width: 600px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        #chatbox {
+            height: 80vh;
+            max-height: 80vh;
+            overflow-y: scroll;
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: rgb(247, 247, 247);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            max-width: 600px;
+
+        }
+
+        ul li {
+            display: inline;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-top:5px;
+        }
+
+        .blue_chat {
+            border: 0.5px solid rgb(62, 184, 255);
+            background-color: rgb(56, 59, 255);
+            color: white;
+        }
+
+        .gray_chat {
+            border: 0.5px solid rgb(194, 194, 194);
+            background-color: rgb(209, 209, 209);
+            color: rgb(54, 54, 54);
+        }
+
+        .left {
+            float: left;
+            margin-left: -40px;
+        }
+
+        .right {
+            float: right;
+        }
+
+        #text {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        #sendbtn {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+    <main>
+        <div id="chatbox">
+            <ul>
+                <div id="chat_space">
+                </div>
+            </ul>
+        </div>
+
+        <div id="user_in">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Talk To chAI"
+                    aria-label="Talk To Chandler Bing" aria-describedby="button-addon2" id="text" autocomplete="off"
+                    required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="sendbtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script>
+    var sendbtn = document.getElementById("sendbtn");
+    var text = "hey";
+    var context="0";
+    sendbtn.addEventListener("click", function () {
+        console.log("Process Started");
+        text = document.getElementById("text").value;
+        document.getElementById("text").value = "";
+        chat_append(text, "you");
+
+        var requestOptions = {
+            method: "GET",
+            redirect: "follow",
+        };
+
+        fetch(`${window.location.origin}/predict/?msg=${text}&context=${context}`, requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                chat_append(JSON.parse(result)["response"], "Chandler");
+                context=JSON.parse(result)["context"]
+            })
+            .catch((error) => console.log("error", error));
+    });
+
+</script>
+
+<script>
+    function chat_append(text, sender) {
+        div = document.getElementById("chat_space");
+        if (sender === "you") {
+            div.innerHTML += `<li class="right gray_chat">${text}</li><br><br>`;
+        }
+        else {
+            div.innerHTML += `<li class="left blue_chat">${text}</li><br><br>`;
+        }
+        var objDiv = document.getElementById("chatbox");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+</script>
+
+</html>
