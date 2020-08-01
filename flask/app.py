@@ -13,7 +13,7 @@ lemmatizer = WordNetLemmatizer()
 model = load_model('chatbot_model.h5')
 words= pickle.load(open('words.pkl', 'rb'))
 classes= pickle.load(open('classes.pkl', 'rb'))
-intents = json.load(open("intents.json",encoding="utf8"))
+intents = json.load(open("intents.json", encoding="utf8"))
 
 app = Flask(__name__)
 
