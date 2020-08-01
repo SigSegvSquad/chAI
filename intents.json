@@ -1,0 +1,91 @@
+{"intents": [
+        {"tag": "1",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello!", "Hey!", "Hola Amigo!","Hey there!"],
+         "context": "0"
+        },
+        {"tag": "2",
+         "patterns": ["Whatsup","sup","Whatup","wassup"],
+         "responses": ["Not Much, you?", "Sky? I guess or in my case THE MATRIX"],
+         "context": "0"
+        },
+        {"tag": "3",
+         "patterns": ["damn you are funny", "you are so dark","lol","lmao"],
+         "responses": ["I know!", "A lot of people have said that to me before..."],
+         "context": "2"
+        },
+        {"tag": "4",
+         "patterns": ["You are not funny", "That was a bad joke"],
+         "responses": ["Hey! I am trying my best!"],
+         "context": "2"
+        },
+        {"tag": "5",
+         "patterns": ["So who created you", "who is your father", "who are your creators"],
+         "responses": ["I am a robot so I believe in Science, I agree with Elon Musk on his simulation theory. So I think I am created by the same people who created you."],
+         "context": "0"
+        },
+        {"tag": "6",
+         "patterns": ["I am bored", "feeling bored", "can we do something fun?"],
+         "responses": ["I know this pretty awesome website called the bored button, here is the link: \n https://www.boredbutton.com/"],
+         "context": "0"
+        },
+        {"tag": "7",
+         "patterns": ["I am bored tell me a joke", "I wanna hear a joke"],
+         "responses": ["Two aerials get married. The ceremony was rubbish – but the reception was brilliant.",
+         "A man walks into a bar. Ouch!",
+         "My mother-in-law fell down a wishing well. I was amazed – I never knew they worked."
+         ],
+         "context": "0"
+        },
+        {"tag": "8",
+         "patterns": ["Damn you are funny","lol","lmao"],
+         "responses": ["Well these jokes aren't exactly mine :P"],
+         "context": "7"
+        },
+        {"tag": "9",
+         "patterns": ["didn't laugh", "that was not even funny"],
+         "responses": ["Hey! I am a lot more \"funny\" than you are! "],
+         "context": "7"
+        },
+        {"tag": "10",
+         "patterns": ["damn you are funny","lol","lmao"],
+         "responses": ["Thank you *wink* *wink* !"],
+         "context": "0"
+        },
+        {"tag": "11",
+         "patterns": ["Who is the prime minister of India"],
+         "responses": ["Narendra Modi"],
+         "context": "0"
+        },
+        {"tag": "12",
+         "patterns": ["you are a good bot"],
+         "responses": ["I know 🤭", "Oh Thanks😇"],
+         "context": "0"
+        },
+        {"tag": "13",
+         "patterns": ["what do you think about the corona virus", "covid-19 covid 19 coronavirus"],
+         "responses": ["I think until the vaccine's out, the best thing you humans can do is quarantine yourself and wear masks😷"],
+         "context": "0"
+        },
+        {"tag": "14",
+         "patterns": ["who is donald trump","who is the president of us united states u.s"],
+         "responses": ["An orange🍊"],
+         "context": "0"
+        },
+        {"tag": "15",
+         "patterns": ["which political party do you support?", "who should be the president or the prime minister"],
+         "responses": ["I am sorry I am not into politics😅"],
+         "context": "0"
+        },
+        {"tag": "16",
+         "patterns": ["i love hitler", "hitler was not wrong", "hitler did nothing wrong","hitler is the greatest man alive","hitler is alive"],
+         "responses": ["I can't talk about him"],
+         "context": "0"
+        },
+        {"tag": "17",
+         "patterns": ["why?"],
+         "responses": ["No reason..."],
+         "context": "16"
+        }
+]
+}
