@@ -1,4 +1,4 @@
-# chAI
+# chAI - The Living Chatbot
 
 Team: AatmanirBros
 
