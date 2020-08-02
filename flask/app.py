@@ -37,6 +37,7 @@ def bow(sentence, words, context, show_details=True):
     bag.append(int(context))
     return(np.array(bag))
 
+# returns tag and probability
 def best_pred(sentence, context):
     p = bow(sentence, words, context, show_details=False)
     res = model.predict(np.array([p]))[0]
