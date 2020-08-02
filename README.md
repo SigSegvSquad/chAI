@@ -17,3 +17,6 @@ chAI is an Artificial Intelligence based chatbot that serves as an Open-Domain G
 - flask contains the files required for running the website
 - dataset_training contains python files we used to preprocess the Pushshift Reddit Dataset
 - model_training contains jupyter notebook files used to train the 2 models
+
+### Dataset Used
+- [Pushshift Reddit Dataset](https://files.pushshift.io/reddit/comments/)
